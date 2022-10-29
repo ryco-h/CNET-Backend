@@ -1,0 +1,55 @@
+[
+   {
+      "id": "game-1",
+      "name": "Grand Theft Auto V",
+      "picture": "https://media.rockstargames.com/rockstargames/img/global/news/upload/actual_1364906194.jpg",
+      "description": "Experience entertainment blockbusters Grand Theft Auto V and Grand Theft Auto Online — now upgraded for a new generation with stunning visuals, faster loading, 3D audio and more, plus exclusive content for GTA Online players.",
+      "price": 250000,
+      "dateReleased": "2009-06-01T00:00:00",
+      "genre": [
+         "Open World",
+         "Adventure"
+      ],
+      "publisher": "pub-001"
+   },
+   {
+      "id": "game-2",
+      "name": "Hades",
+      "picture": "https://media.rockstargames.com/rockstargames/img/global/news/upload/actual_1364906194.jpg",
+      "description": "Experience entertainment blockbusters Grand Theft Auto V and Grand Theft Auto Online — now upgraded for a new generation with stunning visuals, faster loading, 3D audio and more, plus exclusive content for GTA Online players.",
+      "price": 100000,
+      "dateReleased": "2017-12-22T00:00:00",
+      "genre": [
+         "RPG",
+         "Adventure",
+         "Single Player"
+      ],
+      "publisher": "pub-001"
+   },
+   {
+      "id": "game-3",
+      "name": "Digimon Rumble Arena Online",
+      "picture": "https://media.rockstargames.com/rockstargames/img/global/news/upload/actual_1364906194.jpg",
+      "description": "Experience entertainment blockbusters Grand Theft Auto V and Grand Theft Auto Online — now upgraded for a new generation with stunning visuals, faster loading, 3D audio and more, plus exclusive content for GTA Online players.",
+      "price": 0,
+      "dateReleased": "2002-02-01T00:00:00",
+      "genre": [
+         "MMORPG",
+         "Card Game"
+      ],
+      "publisher": "pub-002"
+   },
+   {
+      "id": "game-4",
+      "name": "CS:GO",
+      "picture": "https://media.rockstargames.com/rockstargames/img/global/news/upload/actual_1364906194.jpg",
+      "description": "Experience entertainment blockbusters Grand Theft Auto V and Grand Theft Auto Online — now upgraded for a new generation with stunning visuals, faster loading, 3D audio and more, plus exclusive content for GTA Online players.",
+      "price": 160000,
+      "dateReleased": "2013-09-12T00:00:00",
+      "genre": [
+         "FPS",
+         "Multiplayer"
+      ],
+      "publisher": "pub-001"
+   }
+]

@@ -1,0 +1,23 @@
+[
+   {
+      "id": "db-collection-1",
+      "game": [
+         "game-1",
+         "game-2",
+         "game-4"
+      ],
+      "publisher": "pub-001"
+   },
+   {
+      "id": "db-collection-2",
+      "game": [
+         "game-3"
+      ],
+      "publisher": "pub-002"
+   },
+   {
+      "id": "db-collection-3",
+      "game": [],
+      "publisher": "pub-003"
+   }
+]

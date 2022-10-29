@@ -1,0 +1,8 @@
+- Publisher must exists first
+- Data SteamDB Collection will be created after first publish for every publisher
+- Any publisher can only puslish 1 game at a time
+
+# Game API Procedure
+- Request will bring Publisher data such as [ID Publisher, ID Collection ? if exist : will create one)]
+- API will call data from SteamDB Collection ? if exist : will create one, and process validation of the game's data
+- API must check if the game is already published

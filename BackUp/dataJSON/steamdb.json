@@ -1,0 +1,25 @@
+[
+   {
+      "id": "db-game-1",
+      "game": [
+         "game-001",
+         "game-002",
+         "game-004"
+      ],
+      "publisher": "pub-001"
+   },
+   {
+      "id": "db-game-2",
+      "game": [
+         "game-003"
+      ],
+      "publisher": "pub-002"
+   },
+   {
+      "id": "db-game-3",
+      "game": [
+         "game-005"
+      ],
+      "publisher": "pub-003"
+   }
+]

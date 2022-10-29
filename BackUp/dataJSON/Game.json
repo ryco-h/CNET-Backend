@@ -1,0 +1,42 @@
+[
+   {
+      "id": "game-001",
+      "name": "Grand Theft Auto V",
+      "price": 250000,
+      "dateReleased": "2009-06-01T00:00:00",
+      "genre": ["Open World", "Adventure"],
+      "publisher": "pub-001"
+   },
+   {
+      "id": "game-002",
+      "name": "Hades",
+      "price": 100000,
+      "dateReleased": "2017-12-22T00:00:00",
+      "genre": ["RPG", "Adventure", "Single Player"],
+      "publisher": "pub-001"
+   },
+   {
+      "id": "game-003",
+      "name": "Digimon Rumble Arena Online",
+      "price": 0,
+      "dateReleased": "2002-02-01T00:00:00",
+      "genre": ["MMORPG", "Card Game"],
+      "publisher": "pub-002"
+   },
+   {
+      "id": "game-004",
+      "name": "CS:GO",
+      "price": 160000,
+      "dateReleased": "2013-09-12T00:00:00",
+      "genre": ["FPS", "Multiplayer"],
+      "publisher": "pub-001"
+   },
+   {
+      "id": "game-005",
+      "name": "Minecraft PC Edition",
+      "price": 199999,
+      "dateReleased": "2011-09-12T00:00:00",
+      "genre": ["Open World", "Single Player", "Multiplayer"],
+      "publisher": "pub-003"
+   }
+]

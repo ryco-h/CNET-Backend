@@ -1,0 +1,20 @@
+{
+  "name": "Course-Net",
+  "version": "1.0.0",
+  "description": "Back End",
+  "main": "index.js",
+  "author": "AH",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20",
+    "pg": "^8.8.0",
+    "sequelize": "^6.25.3",
+    "sequelize-cli": "^6.5.2"
+  },
+  "scripts": {
+    "start": "nodemon index.js"
+  }
+}
