@@ -22,7 +22,7 @@ class SteamDBController {
                return {idGame, name, picture, description, price, dateReleased, genre}
             })[0]
          }),
-         publisher: dataPublisher.filter(publisher => publisher.idPublisher === r.publisher)
+         publisher: dataPublisher.filter(publisher => publisher.idPublisher === r.publisher)[0]
       })))
    }
 
