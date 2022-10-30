@@ -43,7 +43,11 @@ class GameController {
          })
       }
 
+      let idGame = await game.findAll()
+      idGame = 'game-' + Number(idGame.length + 1)
+
       await game.create({
+         idGame: idGame,
          name: name,
          picture: picture,
          description: description,
@@ -63,7 +67,7 @@ class GameController {
             idSteamDB = 'db-collection-' + Number(idSteamDB.length + 1)
             
             let games = []
-            games.push(result.dataValues.id)
+            games.push(result.dataValues.idGame)
             
             await steamdb.create({
                idSteamDB: idSteamDB,
@@ -94,8 +98,7 @@ class GameController {
                   message: 'Game sudah ada.'
                })
             } else {
-               games.push(result.dataValues.id)
-               console.log(steamDB.idSteamDB)
+               games.push(result.dataValues.idGame)
 
                await steamdb.update({
                   idSteamDB: steamDB.idSteamDB,

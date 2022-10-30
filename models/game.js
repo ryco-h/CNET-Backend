@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Game.init({
+    idGame: DataTypes.STRING,
     name: DataTypes.STRING,
     picture: DataTypes.STRING,
     description: DataTypes.STRING(500),

@@ -10,7 +10,6 @@ const corsOption = {
    optionSuccessStatus:200
 }
 
-
 app.use(cors(corsOption))
 
 app.use(function(req, res, next){
@@ -31,6 +30,14 @@ const PublisherRoute = require('./routes/publisher-route')
 app.use('/api/v1/steamdb', SteamDBRoute)
 app.use('/api/v1/gamedb', GameRoute)
 app.use('/api/v1/publisher', PublisherRoute)
+app.use('/', (req, res) => {
+   var baseUrl = req.protocol + '://' + req.headers.host;
+   res.send({
+      'Steam Route': baseUrl + '/api/v1/steamdb',
+      'Game Route': baseUrl + '/api/v1/gamedb',
+      'Publisher Route': baseUrl + '/api/v1/publisher'
+   })
+})
 
 app.listen(process.env.PORT, ()=> {
    console.log('listening on port ' + process.env.PORT)

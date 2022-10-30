@@ -1,16 +1,29 @@
-const steamdb = require("../models").SteamDB
+const steamdb = require('../models').SteamDB
+const game = require('../models').Game
+const publisherModel = require('../models').Publisher
 
 class SteamDBController {
 
-   static getSteamDB(req, res) {
+   static async getSteamDB(req, res) {
+      let steamDB = await steamdb.findAll();
+      let dataPublisher = await publisherModel.findAll()
+      let dataGame = await game.findAll();
 
-      steamdb.findAll()
-      .then((result) => {
-         res.send(result)
-      })
-      .catch((error) => {
-         res.send(error)
-      })
+      if(!steamDB) {
+         return res.send({ message: 'Error' })
+      }
+
+      res.send(steamDB.map(r => ({
+         idSteamDB: r.idSteamDB,
+         game: r.games.map(idGame => {
+            return dataGame.filter(game => game.idGame === idGame).map(game => {
+               let {idGame, name, picture, description, price, dateReleased, genre} = game
+
+               return {idGame, name, picture, description, price, dateReleased, genre}
+            })[0]
+         }),
+         publisher: dataPublisher.filter(publisher => publisher.idPublisher === r.publisher)
+      })))
    }
 
    static deleteSteamDB(req, res) {
