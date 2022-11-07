@@ -84,16 +84,15 @@ class GameController {
             })
             .catch((error) => {
                res.send({
-                  message: 'Gagal membuat SteamDB Collection'
+                  message: 'Gagal membuat SteamDB Collection',
+                  error
                })
             })
          } else if(steamDB) {
 
-            
             let games = steamDB.dataValues.games
             
             if(steamDB.dataValues.games.includes(result.dataValues.id)) {
-               console.log(steamDB.dataValues.games.includes(result.dataValues.id), games.push(result.dataValues.id))
                return res.send({
                   message: 'Game sudah ada.'
                })
@@ -125,35 +124,6 @@ class GameController {
                   })
                })
             }
-
-            // await steamdb.update({
-            //    idSteamDB: steamDB.dataValues.idSteamDB,
-            //    games: games,
-            //    publisher: steamDB.dataValues.publisher
-            // },
-            // {
-            //    where: {idSteamDB: steamDB.dataValues.idSteamDB}
-            // })
-            // .then((result) => {
-            //    if(result) {
-            //       return res.send({
-            //          message: 'Berhasil menghapus data Game'
-            //       })
-            //    } else {
-            //       return res.send({
-            //          message: 'Gagal Menghapus data Game || Database sudah kosong',
-            //          status: 404,
-            //          result: result
-            //       })
-            //    }
-            // })
-            // .catch((error) => {
-            //    res.send(error)
-            // })
-
-            // return res.send({
-            //    message: 'Collection is found'
-            // })
          }
       })
       .catch((error) => {
@@ -161,25 +131,58 @@ class GameController {
       })
    }
 
+   static async updateGame(req, res) {
+
+      const {idGame, name, picture, description, price, dateReleased, genre, publisher} = req.body
+      const gameToUpdate = await game.findOne({where: {idGame}})
+
+      if(!gameToUpdate) {
+         return res.send({
+            message: 'Game not found',
+            status: 404
+         })
+      }
+
+      game.update(
+      {
+         name,
+         picture,
+         description,
+         price,
+         genre,
+         publisher
+      },
+      {
+         where: {idGame: gameToUpdate.dataValues.idGame}
+      })
+      .then((result) => {
+         if(result) {
+            return res.send({
+               message: 'Berhasil merubah data Game'
+            })
+         } else {
+            return res.send({
+               message: 'Gagal merubah data Game'
+            })
+         }
+      })
+      .catch((error) => {
+         return res.send({
+            message: 'Gagal merubah data Game',
+            reason: error
+         })
+      })
+   }
+
    static async deleteGame(req, res) {
 
       const id = req.params.id
+
+      // Option to reset default id from base Model
       let option = (req.query.option === 'truncate') ? [{ truncate: true, restartIdentity: true }, {where: {id}}] : [{where: {id}}]
-      
-      // let steamDBs = await steamdb.findOne({where: {games: {[Op.contains]: [id]}}})
-      // console.log(steamDBs)
-
-      // let gamess = steamDBs.dataValues.games
-      // console.log(gamess, 'games')
-
-      // gamess = removeItemAll(gamess, id)
-
-      // console.log(gamess, 'gamess')
-
 
       game.destroy(option[0])
       .then(async (result) => {
-
          
          let steamDB = await steamdb.findOne({where: {games: {[Op.contains]: [id]}}})
          console.log(steamDB.dataValues.idSteamDB)

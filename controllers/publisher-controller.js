@@ -39,12 +39,9 @@ class PublisherController {
    static async registerPublisher(req, res) {
 
       const {name, company, username, password} = req.body
-
       
       let idPublisher = await publisher.findAll()
-      console.log(idPublisher.length)
       idPublisher = 'pub-' + Number(idPublisher.length + 1)
-      console.log(idPublisher)
 
       let isPublisherExist = await publisher.findOne({where: {[Op.or]: [{name},{username}]}})
 

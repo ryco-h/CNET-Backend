@@ -3,9 +3,8 @@ const GameController = require('../controllers/game-controller')
 const route = express.Router()
 
 route.get('/', GameController.getGames)
-// route.get('/game', GameController.getGameById)
-// route.get('/game/:idGame', GameController.getGameById)
 route.post('/register', GameController.registerGame)
+route.put('/update', GameController.updateGame)
 route.delete('/delete/:id', GameController.deleteGame)
 
 module.exports = route
